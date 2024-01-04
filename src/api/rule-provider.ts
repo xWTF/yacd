@@ -34,6 +34,7 @@ function normalizeAPIResponse(data: RuleProviderAPIData) {
 }
 
 export async function fetchRuleProviders(ctx: QueryCtx) {
+  return { byName: {}, names: [] };
   const data = (await query(ctx)) || { providers: {} };
   return normalizeAPIResponse(data);
 }
